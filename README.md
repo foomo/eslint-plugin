@@ -7,7 +7,7 @@ eslint utility rules to effectively handle monorepo setups
 You'll first need to install [ESLint](http://eslint.org):
 
 ```bash
-$npm i eslint --save-dev
+yarn add -D eslint
 ```
 
 Next, install `@foomo/eslint-plugin`:
@@ -29,7 +29,7 @@ Add `@foomo/eslint-plugin` to the plugins section of your `.eslintrc` configurat
 Then configure the rules you want to use under the rules section.
 
 ```json
-{****
+{
   "rules": {
     "@foomo/no-package-imports": ["error", {
       "options": [
