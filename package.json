@@ -1,6 +1,6 @@
 {
   "name": "@foomo/eslint-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "eslint utility rules for monorepo project setup",
   "keywords": [
     "eslint",
