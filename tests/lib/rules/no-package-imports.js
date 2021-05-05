@@ -40,7 +40,7 @@ ruleTester.run("no-package-imports", rule, {
 
   invalid: [
     {
-      code: 'import { Button } from "../../packages/components/src/Button"',
+      code: 'import { Button } from "../../../packages/components/src/Button"',
       output: 'import { Button } from "@monorepo/components/Button"',
       parserOptions: { ecmaVersion: 6, sourceType: "module" },
       options,
@@ -69,6 +69,21 @@ ruleTester.run("no-package-imports", rule, {
           ],
         },
       ],
+      errors: [incorrectImport],
+    },
+    {
+      code: 'import Button from "../../../packages/components/Button"',
+      output: 'import Button from "@monorepo/components/Button"',
+      parserOptions: { ecmaVersion: 6, sourceType: "module" },
+      options: [{
+        options: [
+          {
+            invalidPrefix: "packages",
+            invalidSuffix: "",
+            monorepoRoot: "@monorepo",
+          },
+        ],
+      }],
       errors: [incorrectImport],
     },
     {
